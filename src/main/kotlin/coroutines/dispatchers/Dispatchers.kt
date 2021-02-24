@@ -4,10 +4,10 @@ import kotlinx.coroutines.*
 
 
 fun main() = runBlocking<Unit> {
-    launch { // context of the parent, main runBlocking coroutine
-        println("main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
+    launch { // context of the parent, blocking.main runBlocking coroutine
+        println("blocking.main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
     }
-    launch(Dispatchers.Unconfined) { // not confined -- will work with main thread
+    launch(Dispatchers.Unconfined) { // not confined -- will work with blocking.main thread
         println("Unconfined            : I'm working in thread ${Thread.currentThread().name}")
     }
     launch(Dispatchers.Default) { // will get dispatched to DefaultDispatcher

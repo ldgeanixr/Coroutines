@@ -32,9 +32,9 @@ private suspend fun nonCancellable() = runBlocking{
         }
     }
     delay(1300L) // delay a bit
-    println("main: I'm tired of waiting!")
+    println("blocking.main: I'm tired of waiting!")
     job.cancelAndJoin() // cancels the job and waits for its completion
-    println("main: Now I can quit.")
+    println("blocking.main: Now I can quit.")
 }
 
 private suspend fun CoroutineScope.cancelWithTryFinally() {
@@ -49,9 +49,9 @@ private suspend fun CoroutineScope.cancelWithTryFinally() {
         }
     }
     delay(1300L) // delay a bit
-    println("main: I'm tired of waiting!")
+    println("blocking.main: I'm tired of waiting!")
     job.cancelAndJoin() // cancels the job and waits for its completion
-    println("main: Now I can quit.")
+    println("blocking.main: Now I can quit.")
 }
 
 private suspend fun CoroutineScope.cancel() {
@@ -68,9 +68,9 @@ private suspend fun CoroutineScope.cancel() {
         }
     }
     delay(1300L) // delay a bit
-    println("main: I'm tired of waiting!")
+    println("blocking.main: I'm tired of waiting!")
     job.cancelAndJoin() // cancels the job and waits for its completion
-    println("main: Now I can quit.")
+    println("blocking.main: Now I can quit.")
 }
 
 private suspend fun CoroutineScope.cancelCoroutine() {
@@ -87,7 +87,7 @@ private suspend fun CoroutineScope.cancelCoroutine() {
         }
     }
     delay(1300L) // delay a bit
-    println("main: I'm tired of waiting!")
+    println("blocking.main: I'm tired of waiting!")
     job.cancelAndJoin() // cancels the job and waits for its completion
-    println("main: Now I can quit.")
+    println("blocking.main: Now I can quit.")
 }
